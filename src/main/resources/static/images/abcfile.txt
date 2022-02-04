@@ -1,0 +1,15 @@
+import boto3
+
+
+
+s3 = boto3.resource('s3')
+
+copy_source = {
+
+'Bucket': 'bdi.dev',
+
+'Key': 'UC/trans_8'
+
+}
+
+s3.meta.client.copy(copy_source, 'bdi.dev', 'UC/gov_uc')
